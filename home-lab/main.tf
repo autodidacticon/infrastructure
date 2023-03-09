@@ -35,22 +35,21 @@ module "terraform_state_backend" {
   force_destroy                      = false
 }
 
-
-module "vpc" {
-  source = "terraform-aws-modules/vpc/aws"
-
-  name = "home"
-  cidr = "10.0.0.0/16"
-
-  azs                          = ["us-east-2a", "us-east-2b", "us-east-2c"]
-  private_subnets              = ["10.0.0.0/20", "10.0.16.0/20", "10.0.32.0/20"]
-  public_subnets               = ["10.0.100.0/24", "10.0.101.0/24", "10.0.102.0/24"]
-  database_subnets             = ["10.0.200.0/24", "10.0.201.0/24", "10.0.202.0/24"]
-  create_database_subnet_group = false
-  enable_nat_gateway           = false
-  single_nat_gateway           = true
-  enable_vpn_gateway           = false
-}
+#module "vpc" {
+#  source = "terraform-aws-modules/vpc/aws"
+#
+#  name = "home"
+#  cidr = "10.0.0.0/16"
+#
+#  azs                          = ["us-east-2a", "us-east-2b", "us-east-2c"]
+#  private_subnets              = ["10.0.0.0/20", "10.0.16.0/20", "10.0.32.0/20"]
+#  public_subnets               = ["10.0.100.0/24", "10.0.101.0/24", "10.0.102.0/24"]
+#  database_subnets             = ["10.0.200.0/24", "10.0.201.0/24", "10.0.202.0/24"]
+#  create_database_subnet_group = false
+#  enable_nat_gateway           = false
+#  single_nat_gateway           = true
+#  enable_vpn_gateway           = false
+#}
 
 #module "eks" {
 #  source               = "../aws/modules/eks"
