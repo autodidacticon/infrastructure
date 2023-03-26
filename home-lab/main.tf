@@ -35,6 +35,10 @@ module "terraform_state_backend" {
   force_destroy                      = false
 }
 
+module "iam" {
+    source = "../aws/modules/iam"
+}
+
 #module "vpc" {
 #  source = "terraform-aws-modules/vpc/aws"
 #
